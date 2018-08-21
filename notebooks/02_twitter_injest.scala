@@ -12,6 +12,7 @@ import twitter4j.conf.ConfigurationBuilder
 dbutils.widgets.text("queryTwitterTopic", "russia")
 dbutils.widgets.text("socialSource", "TWITTER")
 
+
 // Get notebook parameters:
 val queryTwitterTopic = dbutils.widgets.get("queryTwitterTopic")
 val socialSourceParam = dbutils.widgets.get("socialSource")
@@ -87,9 +88,11 @@ while (!finished) {
       }
       Thread.sleep(2000)
       Math.min(message.getId(), currLowestStatusId)
+
     }
   query.setMaxId(lowestStatusId - 1)
 }
 
 // In case you forcibly want to close the connection to the Event Hub, use the following command:
 // eventHubClient.get().close()
+
